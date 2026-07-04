@@ -8,7 +8,7 @@ class Rol:
 
     def __eq__(self, otro) -> bool:
         if not isinstance(otro, Rol): 
-            return NotImplementedError("")
+            return NotImplementedError("Operación no permitida: los tipos de datos no son iguales")
         return self.idRol == otro.idRol
 
     def validacion_rol(self, lista_roles: list) -> list:
