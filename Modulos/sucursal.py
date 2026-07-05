@@ -31,5 +31,5 @@ class Sucursal:
             errores.append("El ID de la sucursal no puede estar vacio")
 
         if self in lista_sucursales: 
-            errores.append(f"La sucursal {self.idSucursal} ya existe.")
+            errores.append(f"La sucursal {self.idSucursal} ya existe")
         return errores

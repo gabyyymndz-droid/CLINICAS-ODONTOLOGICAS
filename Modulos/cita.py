@@ -16,7 +16,7 @@ class Cita:
         errores = []
 
         if not self.idCita or not str(self.idCita).strip():
-            errores.append("El ID del Rol no puede estar vacio")
+            errores.append("El ID de la cita no puede estar vacio")
         if self in lista_citas: 
             errores.append(f"La cita {self.idCita} ya existe.")
             

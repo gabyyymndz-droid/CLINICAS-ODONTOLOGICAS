@@ -8,9 +8,8 @@ class Doctor:
         self.idDoctor = idDoctor
         self.NombreDoctor = NombreDoctor
         self.jvpODoctor = jvpODoctor
-        self.paciente_registrado = paciente # Asociación simple
+        self.paciente_registrado = paciente 
         
-        # Composición: El doctor crea y controla las citas (rombo lleno en Doctor)
         self.citas_doctor: list[Cita] = []
 
     def __eq__(self, otro) -> bool:
@@ -19,14 +18,19 @@ class Doctor:
 
     def validacion_doctor(self, lista_doctores: list) -> list:
         errores = []
+
+        if not self.idDoctor or not str(self.idDoctor).strip():
+            errores.append("El ID del doctor no puede estar vacio")
+
         if self in lista_doctores: 
-            errores.append(f"El doctor {self.idDoctor} ya existe.")
+            errores.append(f"El doctor {self.idDoctor} ya existe")
+
+
         return errores
 
     def Disponibilidad(self):
         pass
     
     def crear_cita(self, idCita: str, horario: date, servicio: Servicio):
-        # Prueba de Composición: Instanciación interna
         nueva_cita = Cita(idCita, horario, servicio)
         self.citas_doctor.append(nueva_cita)
