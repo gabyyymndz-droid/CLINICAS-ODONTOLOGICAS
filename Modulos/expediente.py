@@ -3,14 +3,13 @@ from Modulos.cita import Cita
 from datetime import date
 
 class Expediente:
-    def __init__(self, idExpediente: str, fechaApertura: date, alergiasMedicamentos: str, enfermedadesPreexistentes: str, notasMedicas: str):
+    def __init__(self, idExpediente: str, fechaApertura: date, alergiasMedicamentos: str, enfermedadesPreexistentes: str, notasMedicas: str, historialCitas: list):
         self.idExpediente = idExpediente
         self.fechaApertura = fechaApertura
         self.alergiasMedicamentos = alergiasMedicamentos
         self.enfermedadesPreexistentes = enfermedadesPreexistentes
         self.notasMedicas = notasMedicas
-
-        self.historialCitas = []
+        self.historialCitas = historialCitas
         self.servicios_registrados: list[Servicio] = []
 
     def __eq__(self, otro) -> bool:
@@ -32,6 +31,4 @@ class Expediente:
         nuevo_servicio = Servicio(idServicio, descripcion, jvp)
         self.servicios_registrados.append(nuevo_servicio)
 
-    def agregar_cita_al_historial(self, cita: Cita):
-        self.historialCitas.append(cita)
         

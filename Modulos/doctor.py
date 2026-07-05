@@ -31,6 +31,6 @@ class Doctor:
     def Disponibilidad(self):
         pass
     
-    def crear_cita(self, idCita: str, horario: date, servicio: Servicio):
+    def crear_cita_interna(self, idCita: str, horario: date, servicio: Servicio):
         nueva_cita = Cita(idCita, horario, servicio)
         self.citas_doctor.append(nueva_cita)
